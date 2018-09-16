@@ -1,0 +1,128 @@
+// GLOBAL
+@font-face {
+  font-family: 'Soul Meets Body';
+  src: '../fonts/Soul Meets Body.ttf'
+}
+
+$color-1: #77BA99;
+$color-2: #D33F49;
+$color-3: #2E4057;
+$color-4: #262730;
+$color-5: #F6D8AE;
+
+body {
+  font-family: 'Soul Meets Body';
+  letter-spacing: 2px;
+}
+
+// NAVBAR
+.navbar {
+  background:$color-3;
+  padding:30px;
+  font-size: 1.5em; 
+
+  a, i, button {
+    color: $color-5;
+    
+    &:focus {
+      outline:none;
+    }
+  }
+
+  .dropdown-menu {
+    background: #2E4057;
+    border:1px solid $color-5;
+  }
+}
+
+// LANDING
+.jumbotron {
+  height:92vh;
+  background: $color-2;
+  
+  h1 {
+    align-items: center;
+    justify-content: center;
+    margin-top:300px;
+  }
+}
+
+// CONTACTS INDEX
+.list-group-item {
+  font-size: 1.5em;
+  transition: .2s;
+
+  &:hover {
+    background: #77BA99;
+  }
+  
+    &.active {
+    background: $color-3;
+    border-color: $color-3;
+    transition: .2s;
+
+    &:hover {
+      background: #262730;
+    }
+  }
+
+}
+.tab-content {
+
+  .user-profile {
+
+    .profile-pic {
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      object-fit: cover;
+      text-align:center;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      vertical-align: middle;
+    }
+
+    .subtitle {
+      font-size: 2rem;
+    }
+  }
+}
+
+// UNSPLASH GALLERY
+.gallery-row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  box-sizing: border-box;
+
+  .gallery-col {
+    -ms-flex: 20%; /* IE 10 */
+    flex: 20%;
+    padding: 0 2px;
+
+    img {
+      margin-top: 8px;
+      vertical-align: middle;
+      // width:100%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .gallery-column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

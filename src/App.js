@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-// Components
+// ======= COMPONENTS =========
+// Pages
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Landing from './components/layout/Landing';
+import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
+// Contacts
 import Contacts from './components/contacts/Contacts';
 import AddContact from './components/contacts/AddContact';
 import EditContact from './components/contacts/EditContact';
-import Header from './components/layout/Header';
-import About from './components/pages/About';
-import NotFound from './components/pages/NotFound';
+// Photos
+import Photos from './components/photos/Photos';
 
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
 
+import 'jquery/dist/jquery.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './css/main.css';
 
 class App extends Component {
   render() {
@@ -22,16 +29,21 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Header branding="Contact Manager" />
-            <div className="container">
+            <Header branding="React F2B w/ Redux" />
               <Switch>
-                <Route exact path="/" component={Contacts} />
+                {/* Pages */}
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/about" component={About} />
+                {/* Contacts */}
+                <Route exact path="/contacts" component={Contacts} />
                 <Route exact path="/contact/add" component={AddContact} />
                 <Route exact path="/contact/edit/:id" component={EditContact} />
-                <Route exact path="/about" component={About} />
+                {/* Photos */}
+                <Route exact path="/photos" component={Photos} />
+                {/* Default */}
                 <Route component={NotFound} />
               </Switch>
-            </div>
+            <Footer />
           </div>
         </Router>
       </Provider>

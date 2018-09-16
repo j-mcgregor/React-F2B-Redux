@@ -13,6 +13,8 @@
     "popper.js": "^1.14.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-images": "^0.5.19",
+    "react-photo-gallery": "^6.2.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.5",

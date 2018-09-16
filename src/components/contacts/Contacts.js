@@ -1,28 +1,80 @@
 import React, { Component } from 'react';
-import Contact from './Contact';
+import Contact2 from './Contact2';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 // When we call anything from the Redux state it's put into props so we want prop-types
 import PropTypes from 'prop-types';
 import { getContacts } from '../../actions/contactActions';
 
 
 class Contacts extends Component {
+  constructor(){
+    super();
+    this.state = {
+      currentContact: 1
+    }
+  }
 
   componentDidMount(){
     this.props.getContacts();
   }
 
+  onClick(e){
+    this.setState({ 
+      currentContact: parseInt(e.target.id, 10 )
+    })
+    console.log(this.state);
+    
+  }
+
   render() {
     const { contacts } = this.props;
     return (
-      <React.Fragment>
-        <h1 className="display-4 mb-2">
+      <div className="container-fluid mt-4 px-0">
+        <h1 className="display-4 mb-2 text-center">
           <span className="text-danger">Contact</span> List
         </h1>
-        {contacts.map(contact => (
-          <Contact key={contact.id} contact={contact} />
-        ))}
-      </React.Fragment>
+        <div className="row">
+          <div className="col-3">
+            <div className="list-group" id="list-tab" role="tablist">
+              {contacts.map(contact => (
+                <a 
+                  className={
+                    classnames('py-3 list-group-item list-group-item-action', {
+                      'active': (contact.id === 1)
+                    })
+                  }
+                  id={`${contact.id}`}
+                  data-toggle="list" 
+                  href={`#list-user-${contact.id}`}
+                  role="tab" 
+                  aria-controls={`user-${contact.id}`}
+                  key={contact.id} 
+                  contact={contact} 
+                  data-id={contact.id}
+                  onClick={this.onClick.bind(this)}
+                >
+                  { contact.name }
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="col-9">
+            <div className="tab-content" id="nav-tabContent">
+              {contacts.map(contact => {
+                if (contact.id === this.state.currentContact) {
+                  return (
+                    <Contact2 key={contact.id} contact={contact} />
+                  )
+                } else {
+                  return null;
+                }
+              })}
+            </div>
+          </div>
+        </div>
+   
+      </div>
     );
   }
 }

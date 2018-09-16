@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Soul Meets Body';
+  src: "../fonts/Soul Meets Body.ttf"; }
+body {
+  font-family: 'Soul Meets Body';
+  letter-spacing: 2px; }
+
+.navbar {
+  background: #2E4057;
+  padding: 30px;
+  font-size: 1.5em; }
+  .navbar a, .navbar i, .navbar button {
+    color: #F6D8AE; }
+    .navbar a:focus, .navbar i:focus, .navbar button:focus {
+      outline: none; }
+  .navbar .dropdown-menu {
+    background: #2E4057;
+    border: 1px solid #F6D8AE; }
+
+.jumbotron {
+  height: 92vh;
+  background: #D33F49; }
+  .jumbotron h1 {
+    align-items: center;
+    justify-content: center;
+    margin-top: 300px; }
+
+.list-group-item {
+  font-size: 1.5em;
+  transition: .2s; }
+  .list-group-item:hover {
+    background: #77BA99; }
+  .list-group-item.active {
+    background: #2E4057;
+    border-color: #2E4057;
+    transition: .2s; }
+    .list-group-item.active:hover {
+      background: #262730; }
+
+.tab-content .user-profile .profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  text-align: center; }
+.tab-content .user-profile .title {
+  font-size: 2.5rem;
+  vertical-align: middle; }
+.tab-content .user-profile .subtitle {
+  font-size: 2rem; }
+
+.gallery-row {
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  box-sizing: border-box; }
+  .gallery-row .gallery-col {
+    -ms-flex: 20%;
+    /* IE 10 */
+    flex: 20%;
+    padding: 0 2px; }
+    .gallery-row .gallery-col img {
+      margin-top: 8px;
+      vertical-align: middle; }
+
+@media screen and (max-width: 800px) {
+  .gallery-column {
+    flex: 50%;
+    max-width: 50%; } }
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .gallery-column {
+    flex: 100%;
+    max-width: 100%; } }
+
+/*# sourceMappingURL=main.css.map */

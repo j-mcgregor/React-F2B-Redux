@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteContact } from '../../actions/contactActions';
+import classnames from 'classnames';
 
 class Contact extends Component {
   state = {
@@ -19,19 +20,18 @@ class Contact extends Component {
     const { showContactInfo } = this.state;
 
     return (
-      <div className="card card-body mb-3">
-        <h4>
-          {name}{' '}
-          <i
-            onClick={() =>
-              this.setState({
-                showContactInfo: !this.state.showContactInfo
-              })
-            }
-            className="fas fa-sort-down"
-            style={{ cursor: 'pointer' }}
-          />
-          <i
+        <div 
+          className={
+            classnames('tab-pane fade', {
+              'show active': (id === 1)
+            })
+          }
+          id={`#list-user-${id}`}
+          role="tabpanel" 
+          aria-labelledby={`list-user-${id}-list`}
+        >
+          <h6>
+            <i
             className="fas fa-times"
             style={{ cursor: 'pointer', float: 'right', color: 'red' }}
             onClick={this.onDeleteClick.bind(this, id)}
@@ -47,13 +47,9 @@ class Contact extends Component {
               }}
             />
           </Link>
-        </h4>
-        {showContactInfo ? (
-          <ul className="list-group">
-            <li className="list-group-item">Email: {email}</li>
-            <li className="list-group-item">Phone: {phone}</li>
-          </ul>
-        ) : null}
+        </h6>
+          {email} <br/>
+          {phone}
       </div>
     );
   }
