@@ -1,6 +1,9 @@
 {
   "name": "contactmanager",
   "version": "0.1.0",
+  "engines": {
+    "npm": "6.4.0"
+  },
   "private": true,
   "homepage": "https://patchyj.github.io/React-F2B-Redux",
   "dependencies": {
