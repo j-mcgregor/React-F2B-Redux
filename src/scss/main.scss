@@ -25,6 +25,12 @@ body {
   letter-spacing: 2px;
 }
 
+.display-4-5 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
 // NAVBAR
 .navbar {
   background: $color-3;
@@ -52,15 +58,23 @@ body {
 }
 
 // LANDING
-.jumbotron {
-  height: 92vh;
-  background: $color-2;
+.landing {
+  width:100vw;
+  height:2000px;
+  background: rgb(38,79,38);
+  background: linear-gradient(180deg, $color-3 0%, rgba(100,121,100,1) 24%,  rgba(84,189,93,1) 82%, rgba(255,233,0,1) 100%);
+  color:$color-5;
 
-  h1 {
-    align-items: center;
-    justify-content: center;
-    margin-top: 300px;
+  a {
+    color:white;
+    transition:.2s;
+
+    &:hover {
+      text-decoration: none;
+      color:$color-3;
+    }
   }
+
 }
 
 // CONTACTS INDEX

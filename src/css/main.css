@@ -11,6 +11,11 @@ body {
   font-family: 'Soul Meets Body';
   letter-spacing: 2px; }
 
+.display-4-5 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2; }
+
 .navbar {
   background: #2E4057;
   padding: 5px;
@@ -30,13 +35,18 @@ body {
     border-right: 1px solid #F6D8AE;
     border-left: 1px solid #F6D8AE; }
 
-.jumbotron {
-  height: 92vh;
-  background: #D33F49; }
-  .jumbotron h1 {
-    align-items: center;
-    justify-content: center;
-    margin-top: 300px; }
+.landing {
+  width: 100vw;
+  height: 2000px;
+  background: #264f26;
+  background: linear-gradient(180deg, #2E4057 0%, #647964 24%, #54bd5d 82%, #ffe900 100%);
+  color: #F6D8AE; }
+  .landing a {
+    color: white;
+    transition: .2s; }
+    .landing a:hover {
+      text-decoration: none;
+      color: #2E4057; }
 
 .list-group-item {
   font-size: 1.5em;

@@ -36,7 +36,7 @@ class App extends Component {
                 <Route exact path="/about" component={About} />
                 {/* Contacts */}
                 <Route exact path="/contacts" component={Contacts} />
-                <Route exact path="/contact/add" component={AddContact} />
+                <Route exact path="/contacts/add" component={AddContact} />
                 <Route exact path="/contact/edit/:id" component={EditContact} />
                 {/* Photos */}
                 <Route exact path="/photos" component={Photos} />
