@@ -6536,6 +6536,13 @@ react-redux@^5.0.7:
     loose-envify "^1.1.0"
     prop-types "^15.6.0"
 
+react-rellax@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-rellax/-/react-rellax-1.0.2.tgz#68cfa643691f6d1262cfe1b0dfc289332729d33b"
+  dependencies:
+    prop-types "^15.6.1"
+    rellax "^1.6.2"
+
 react-reveal@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-reveal/-/react-reveal-1.2.2.tgz#f47fbc44debc4c185ae2163a215a9e822c7adfef"
@@ -6798,6 +6805,10 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
+redux-devtools-extension@^2.13.5:
+  version "2.13.5"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
+
 redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
@@ -6881,7 +6892,7 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
 
-rellax@^1.7.0:
+rellax@^1.6.2, rellax@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/rellax/-/rellax-1.7.0.tgz#8fe8192c2da3a155815170a349af66f4b58205f0"
 
