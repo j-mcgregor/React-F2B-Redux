@@ -7,8 +7,14 @@
 @font-face {
   font-family: 'Bungee Hairline';
   src: "../fonts/BungeeHairline-Regular.ttf"; }
+@font-face {
+  font-family: 'The Frontman';
+  src: "../fonts/The Frontman.ttf"; }
+@font-face {
+  font-family: 'quarrystone';
+  src: "../fonts/quarrystone.ttf"; }
 body {
-  font-family: 'Soul Meets Body';
+  font-family: 'Bungee Hairline';
   letter-spacing: 2px; }
 
 .display-4-5 {
@@ -19,8 +25,7 @@ body {
 .navbar {
   background: #2E4057;
   padding: 5px;
-  font-size: 1.1em;
-  border-bottom: 1px solid #F6D8AE; }
+  font-size: .8em; }
   .navbar a,
   .navbar i,
   .navbar button {
@@ -35,6 +40,23 @@ body {
     border-right: 1px solid #F6D8AE;
     border-left: 1px solid #F6D8AE; }
 
+.footer {
+  background: #262730;
+  color: #99cbb2;
+  padding: 40px; }
+  .footer h4 {
+    padding: 20px; }
+  .footer .social-icon {
+    color: #77BA99; }
+    .footer .social-icon i {
+      border: 1px solid #262730;
+      border-radius: 50%;
+      padding: 20px;
+      transition: .2s; }
+      .footer .social-icon i:hover {
+        border: 1px solid #77BA99;
+        color: #448766; }
+
 .landing {
   width: 100vw;
   height: 2000px;
@@ -48,9 +70,18 @@ body {
       text-decoration: none;
       color: #2E4057; }
 
+.contacts-index {
+  background: #2E4057; }
+
 .list-group-item {
-  font-size: 1.5em;
-  transition: .2s; }
+  font-size: 1em;
+  width: 280px;
+  padding: 1.2em 1em !important;
+  transition: .2s;
+  border-radius: 0 !important;
+  background: #262730;
+  color: aliceblue;
+  border: none; }
   .list-group-item:hover {
     background: #77BA99; }
   .list-group-item.active {
@@ -58,26 +89,79 @@ body {
     border-color: #2E4057;
     transition: .2s; }
     .list-group-item.active:hover {
-      background: #262730; }
+      background: #253446; }
 
-.tab-content .user-profile .profile-pic {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  text-align: center; }
-.tab-content .user-profile .title {
-  font-size: 2.5rem;
-  vertical-align: middle; }
-.tab-content .user-profile .subtitle {
-  font-size: 2rem; }
+.tab-content {
+  color: white; }
+  .tab-content .user-profile .profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    text-align: center; }
+  .tab-content .user-profile .title {
+    font-size: 2.5rem;
+    vertical-align: middle; }
+  .tab-content .user-profile .subtitle {
+    font-size: 2rem; }
+
+@media screen and (max-width: 800px) {
+  .list-group-item {
+    font-size: .8em;
+    padding: 1.1em 1em !important;
+    width: 150px; }
+
+  .tab-content .user-profile .profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    text-align: center; }
+  .tab-content .user-profile .title {
+    font-size: 2rem;
+    vertical-align: middle; }
+  .tab-content .user-profile .subtitle {
+    font-size: 1rem;
+    margin-top: 10px; } }
+.add-contact {
+  background: #77BA99; }
+  .add-contact .form-container {
+    margin: auto;
+    padding: 150px 0;
+    max-width: 400px; }
+    .add-contact .form-container h2 {
+      transform: rotateZ(45deg) translate(200px, -100px); }
+    .add-contact .form-container form input {
+      background: none;
+      border-radius: 0 !important;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 1px solid #D33F49;
+      color: #D33F49;
+      letter-spacing: 3px; }
+      .add-contact .form-container form input::placeholder {
+        color: #F6D8AE;
+        letter-spacing: 2px;
+        font-size: .8em; }
+      .add-contact .form-container form input:focus {
+        box-shadow: none; }
+      .add-contact .form-container form input[type="submit"] {
+        color: #F6D8AE;
+        font-size: 1.8em;
+        background: #D33F49;
+        transition: .2s;
+        border: 1px solid #D33F49; }
+        .add-contact .form-container form input[type="submit"]:hover {
+          border: 1px solid #D33F49;
+          background: #0f0404;
+          color: #F6D8AE; }
 
 body.modal-open .modal[style]:not([style='display: none;']) {
   display: flex !important;
   height: 100%; }
-
-body.modal-open .modal[style]:not([style='display: none;']) .modal-dialog {
-  margin: auto; }
+  body.modal-open .modal[style]:not([style='display: none;']) .modal-dialog {
+    margin: auto; }
 
 .gallery {
   font-family: 'Bungee Hairline'; }
@@ -128,7 +212,9 @@ body.modal-open .modal[style]:not([style='display: none;']) .modal-dialog {
                   .gallery .gallery-row .gallery-col div .modal .modal-dialog .modal-content .modal-footer a:hover {
                     color: #955e11; }
             .gallery .gallery-row .gallery-col div .modal .modal-dialog img {
-              filter: none; }
+              filter: none;
+              max-height: 600px;
+              object-fit: contain; }
               .gallery .gallery-row .gallery-col div .modal .modal-dialog img:hover {
                 transform: none; }
 

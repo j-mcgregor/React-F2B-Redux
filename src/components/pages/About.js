@@ -57,8 +57,8 @@ class About extends Component {
       if (this.state.hovering1) {
         return (
           <div className="section1" style={{width:'80%',margin:'auto'}}>
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio labore aliquid laudantium voluptatum modi deleniti nemo excepturi suscipit iure! Tempore doloribus tempora aspernatur necessitatibus quaerat fugiat ad cumque delectus eius!</p>
+            <h1 className="display-5">Hi, I'm Jack</h1>
+            <p style={{width:'300px', margin:'auto', fontSize:'1.8em'}}>I like to build things, and my new favourite building tool is React. </p>
           </div>
         )
       }
@@ -66,9 +66,8 @@ class About extends Component {
     const section2 = () => {
       if (this.state.hovering2) {
         return (
-          <div className="section2" style={{width:'80%',margin:'auto'}}>
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio labore aliquid laudantium voluptatum modi deleniti nemo excepturi suscipit iure! Tempore doloribus tempora aspernatur necessitatibus quaerat fugiat ad cumque delectus eius!</p>
+          <div className="section1 mt-5" style={{width:'80%',margin:'auto'}}>
+            <p className="display-5" style={{width:'300px', margin:'auto'}} >I also love digital design, being proficient in Photoshop and Illustrator as well as SASS and LESS</p>
           </div>
         )
       }
@@ -76,9 +75,8 @@ class About extends Component {
     const section3 = () => {
       if (this.state.hovering3) {
         return (
-          <div className="section3" style={{width:'80%',margin:'auto'}}>
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio labore aliquid laudantium voluptatum modi deleniti nemo excepturi suscipit iure! Tempore doloribus tempora aspernatur necessitatibus quaerat fugiat ad cumque delectus eius!</p>
+          <div className="section1 mt-5" style={{width:'80%',margin:'auto'}}>
+            <p className="display-5 text-justified" style={{width:'280px', margin:'auto'}} >Code-wise, I'm a Web Development Instructor at a Tech Consultancy in London, where I teach fullstack technologies, SDET and DevOps, as well as constantly learning and building with new tech outside of work</p>
           </div>
         )
       }
@@ -86,9 +84,8 @@ class About extends Component {
     const section4 = () => {
       if (this.state.hovering4) {
         return (
-          <div className="section4" style={{width:'80%',margin:'auto'}}>
-            <h1>Hello World</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio labore aliquid laudantium voluptatum modi deleniti nemo excepturi suscipit iure! Tempore doloribus tempora aspernatur necessitatibus quaerat fugiat ad cumque delectus eius!</p>
+          <div className="section1 mt-5" style={{width:'80%',margin:'auto'}}>
+            <p className="display-5 text-justified" style={{width:'280px', margin:'auto'}} >If you think I might be the right person for your company or your ide then please get in touch </p>
           </div>
         )
       }
@@ -136,11 +133,11 @@ class About extends Component {
             className="about-col" 
             data-section="1"
             style={styles[0]}
-            onMouseEnter={handleMouseEnter1}
+            onClick={handleMouseEnter1}
             onMouseLeave={handleMouseLeave1}
           >
             { icon1() }
-            <Fade wait={700} cascade when={this.state.hovering1} unmountOnExit>
+            <Fade wait={700} delay={300} duration={300}  when={this.state.hovering1} unmountOnExit>
               { section1() }
             </Fade>
           </div>
@@ -148,11 +145,11 @@ class About extends Component {
             className="about-col" 
             data-section="2"
             style={styles[1]}
-            onMouseEnter={handleMouseEnter2}
+            onClick={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}
           >
             { icon2() }
-            <Fade delay={700}  cascade when={this.state.hovering2}>
+            <Fade delay={300} duration={300}  when={this.state.hovering2}>
               { section2() }
             </Fade>
           </div>
@@ -160,11 +157,11 @@ class About extends Component {
             className="about-col" 
             data-section="3"
             style={styles[2]}
-            onMouseEnter={handleMouseEnter3}
+            onClick={handleMouseEnter3}
             onMouseLeave={handleMouseLeave3}
           >
             { icon3() }
-            <Fade delay={700} duration={500} cascade when={this.state.hovering3}>
+            <Fade delay={300} duration={300}  when={this.state.hovering3}>
               { section3() }
             </Fade>
 
@@ -173,11 +170,11 @@ class About extends Component {
             className="about-col" 
             data-section="4"
             style={styles[3]}
-            onMouseEnter={handleMouseEnter4}
+            onClick={handleMouseEnter4}
             onMouseLeave={handleMouseLeave4}
           >
             { icon4() }
-            <Fade delay={700} duration={500} cascade when={this.state.hovering4}>
+            <Fade delay={300} duration={300}  when={this.state.hovering4}>
               { section4() }
             </Fade>
 

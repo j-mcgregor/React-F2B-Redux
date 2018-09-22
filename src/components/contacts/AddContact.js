@@ -3,6 +3,7 @@ import TextInputGroup from '../layout/TextInputGroup';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addContact } from '../../actions/contactActions';
+import uuid from 'uuid';
 
 class AddContact extends Component {
   state = {
@@ -34,10 +35,22 @@ class AddContact extends Component {
     }
 
     const newContact = {
-      // id: uuid(),
+      id: uuid(),
       name,
       email,
-      phone
+      phone,
+      address: {
+        suite: '',
+        street: '',
+        city: '',
+        zipcode: ''
+      },
+      website: '',
+      company: {
+        name: '',
+        bs: '',
+        catchPhrase: ''
+      }
     };
 
     //// SUBMIT CONTACT ////
@@ -51,7 +64,7 @@ class AddContact extends Component {
       errors: {}
     });
 
-    this.props.history.push('/');
+    this.props.history.push('/contacts');
   };
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -60,45 +73,43 @@ class AddContact extends Component {
     const { name, email, phone, errors } = this.state;
 
     return (
-      <div className="container mt-4">
-        <div className="row py-5">
-          <div className="col-md-4 offset-md-4">
-            <div className="card mb-3">
-              <div className="card-header">Add Contact</div>
-              <div className="card-body">
-                <form onSubmit={this.onSubmit}>
-                  <TextInputGroup
-                    label="Name"
-                    name="name"
-                    placeholder="Enter Name"
-                    value={name}
-                    onChange={this.onChange}
-                    error={errors.name}
-                  />
-                  <TextInputGroup
-                    label="Email"
-                    name="email"
-                    type="email"
-                    placeholder="Enter Email"
-                    value={email}
-                    onChange={this.onChange}
-                    error={errors.email}
-                  />
-                  <TextInputGroup
-                    label="Phone"
-                    name="phone"
-                    placeholder="Enter Phone"
-                    value={phone}
-                    onChange={this.onChange}
-                    error={errors.phone}
-                  />
-                  <input
-                    type="submit"
-                    value="Add Contact"
-                    className="btn btn-light btn-block"
-                  />
-                </form>
-              </div>
+      <div className="add-contact container-fluid">
+        <div className="container">
+          <div className="form-container">
+            <h2 className="display-5">Add contact</h2>
+            <div className="">
+              <form onSubmit={this.onSubmit}>
+                <TextInputGroup
+                  label="Name"
+                  name="name"
+                  placeholder="Enter Name"
+                  value={name}
+                  onChange={this.onChange}
+                  error={errors.name}
+                />
+                <TextInputGroup
+                  label="Email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter Email"
+                  value={email}
+                  onChange={this.onChange}
+                  error={errors.email}
+                />
+                <TextInputGroup
+                  label="Phone"
+                  name="phone"
+                  placeholder="Enter Phone"
+                  value={phone}
+                  onChange={this.onChange}
+                  error={errors.phone}
+                />
+                <input
+                  type="submit"
+                  value="Add Contact"
+                  className="btn btn-light btn-block"
+                />
+              </form>
             </div>
           </div>
         </div>

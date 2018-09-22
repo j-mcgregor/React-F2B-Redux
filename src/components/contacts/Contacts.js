@@ -23,17 +23,12 @@ class Contacts extends Component {
     this.setState({ 
       currentContact: parseInt(e.target.id, 10 )
     })
-    console.log(this.state);
-    
   }
 
   render() {
     const { contacts } = this.props;
     return (
-      <div className="container-fluid mt-4 px-0">
-        <h1 className="display-4 mb-2 text-center">
-          <span className="text-danger">Contact</span> List
-        </h1>
+      <div className="container-fluid px-0 contacts-index">
         <div className="row">
           <div className="col-3">
             <div className="list-group" id="list-tab" role="tablist">
@@ -60,6 +55,9 @@ class Contacts extends Component {
             </div>
           </div>
           <div className="col-9">
+            <h1 className="display-4 mb-2 text-center">
+              <span className="text-danger">Contacts</span>
+            </h1>
             <div className="tab-content" id="nav-tabContent">
               {contacts.map(contact => {
                 if (contact.id === this.state.currentContact) {
